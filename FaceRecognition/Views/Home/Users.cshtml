@@ -1,0 +1,46 @@
+﻿@using FaceRecognition.Entity
+@{
+  List<User> users = ViewBag.users;
+}
+<div style="direction: rtl ;padding-right: 20px;padding-left: 20px">
+  <h1 style="margin-top: 30px">
+    جدول کاربران
+  </h1>
+  <div class="table-responsive text-nowrap mt-5">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>نام</th>
+        <th>پروفایل</th>
+        <th>شماره</th>
+      </tr>
+      </thead>
+      <tbody class="table-border-bottom-0">
+      @foreach (var i in users)
+      {
+        <tr>
+          <td>
+            <i class="icon-base bx bxl-angular icon-md text-danger me-4"></i> <span>@i.Id</span>
+          </td>
+          <td>@i.FullName</td>
+          <td>
+            <ul class="list-unstyled m-0 avatar-group d-flex align-items-center">
+              <li
+                data-bs-toggle="tooltip"
+                data-popup="tooltip-custom"
+                data-bs-placement="top"
+                class="avatar avatar-xs pull-up"
+                title="@i.FullName">
+                <img src="/Images/UserImages/@i.FaceImagePath" alt="Avatar" class="rounded-circle"/>
+              </li>
+
+            </ul>
+          </td>
+          <td>@i.PhoneNumber</td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+</div>

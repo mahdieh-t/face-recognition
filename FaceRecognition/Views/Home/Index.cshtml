@@ -1,0 +1,60 @@
+﻿@{
+  FaceRecognition.Entity.User user = ViewBag.user;
+}
+<div class="content-wrapper">
+            <!-- Content -->
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="nav-align-top">
+                    <ul class="nav nav-pills flex-column flex-md-row mb-6 gap-md-0 gap-2">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="javascript:void(0);"
+                          ><i class="icon-base bx bx-user icon-sm me-1_5"></i> اطلاعات حساب</a
+                        >
+                      </li>
+                  
+                    </ul>
+                  </div>
+                  <div class="card mb-6">
+                    <!-- Account -->
+                    <div class="card-body">
+                      <div class="d-flex align-items-start align-items-sm-center gap-6 pb-4 border-bottom">
+                        <img
+                          src="/Images/UserImages/@user.FaceImagePath"
+                          alt="user-avatar"
+                          class="d-block w-px-100 h-px-100 rounded"
+                          id="uploadedAvatar" />
+                       
+                      </div>
+                    </div>
+                    <div class="card-body pt-4">
+                      <form id="formAccountSettings" style="direction: rtl" method="POST" onsubmit="return false">
+                        <div class="row g-6">
+                          <div class="col-md-6">
+                            <label for="firstName" class="form-label">نام</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="firstName"
+                              name="firstName"
+                              value="@user.FullName"
+                              autofocus />
+                          </div>
+                          <div class="col-md-6">
+                            <label for="lastName" class="form-label">شماره</label>
+                            <input class="form-control" type="text" name="lastName" id="lastName" value="@user.PhoneNumber" />
+                          </div>
+                         
+                        </div>
+                        
+                      </form>
+                    </div>
+                    <!-- /Account -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-backdrop fade"></div>
+          </div>
