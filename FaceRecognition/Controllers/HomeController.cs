@@ -18,6 +18,20 @@ public class HomeController : Controller
         _userManager = userManager;
     }
 
+    public async Task<IActionResult> Dashboard()
+    {
+        ViewBag.userCount = await _userManager.Users.CountAsync();
+        return View();
+        // if (User.Identity.IsAuthenticated)
+        // {
+        //    
+        // }
+        // else
+        // {
+        //     return RedirectToAction("Login", "Auth");
+        // }
+    }
+
     public async Task<IActionResult> Index()
     {
         if (User.Identity.IsAuthenticated)

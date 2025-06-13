@@ -113,7 +113,7 @@
                   </svg>
                 </span>
               </span>
-          <span class="app-brand-text demo menu-text fw-bold ms-2">Dashboard</span>
+          <span class="app-brand-text demo menu-text fw-bold ms-2">Face Id</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -131,10 +131,14 @@
           <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-home-smile"></i>
             <div class="text-truncate" data-i18n="Dashboards">Panel</div>
-            <span class="badge rounded-pill bg-danger ms-auto">2</span>
+            <span class="badge rounded-pill bg-info ms-auto">3</span>
           </a>
           <ul class="menu-sub">
-         
+            <li class="menu-item active">
+              <a href="@Url.Action("Dashboard")" class="menu-link">
+                <div class="text-truncate" data-i18n="Analytics">Dashboard</div>
+              </a>
+            </li>
             <li class="menu-item active">
               <a href="@Url.Action("Index")" class="menu-link">
                 <div class="text-truncate" data-i18n="Analytics">Profile</div>

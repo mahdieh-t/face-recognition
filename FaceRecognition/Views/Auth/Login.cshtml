@@ -78,20 +78,29 @@
                     <form id="faceVerification32Form" enctype="multipart/form-data">
                         <div class="mb-6">
                             <label for="email" class="form-label">شماره تماس</label>
-                            <input type="text" class="form-control" id="email" name="phoneNumber" />
+                            <input type="text" class="form-control" id="email" name="phoneNumber"/>
                         </div>
                         <div class="form-password-toggle">
                             <div class="mb-4">
                                 <label for="formFile" class="form-label">عکس چهره</label>
-                                <input class="form-control" type="file" id="formFile" name="FaceImage"/>
+                                <input class="form-control" name="selfie" accept="image/*" capture="user" type="file"
+                                       id="formFile"/>
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="d-flex justify-content-between">
+                                <a href="@Url.Action("Register")">
+                                    <span>حساب کاربری نداری?</span>
+                                </a>
                             </div>
                         </div>
                         <div class="mb-6">
-                            <button class="btn btn-info mt-2 d-grid w-100" id="btnFaceVerify" type="button">احراز هویت</button>
+                            <button class="btn btn-info mt-2 d-grid w-100" id="btnFaceVerify" type="button">احراز هویت
+                            </button>
                         </div>
                     </form>
 
-                   
+
                 </div>
             </div>
             <!-- /Register -->
@@ -166,7 +175,7 @@
                         text: 'شما با موفقیت وارد شدید.',
                         confirmButtonText: 'باشه'
                     }).then(() => {
-                        window.location.href = '/Home/Index';
+                        window.location.href = '/Home/Dashboard';
                     });
                 },
                 error: function (xhr) {
